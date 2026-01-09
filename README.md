@@ -21,10 +21,34 @@ To harden the connection against brute-force attacks and unauthorized access, I 
     * Moved SSH from port `22` to a custom port to reduce noise from automated bot scanners.
 
 ### 📸 Proof of Concept
-*(Place your screenshot here. Drag and drop the image file into this text box while editing, and GitHub will automatically generate the code for it.)*
+
+**1. Security & Hardware Verification**
+*Below: Neofetch confirms the Raspberry Pi 5 hardware, and UFW status confirms the firewall is active and restricting traffic to SSH (Port 22).*
+
+![Security Verification](security-verify.png)
+<img width="614" height="550" alt="security-verify" src="https://github.com/user-attachments/assets/a2326538-0465-4546-8018-4e29d51254a9" />
+
+
+**2. System Monitoring**
+*Below: Htop interface showing system resource usage and the active SSH session, verifying the headless configuration.*
+
+![System Monitor](htop-monitor.png)
+<img width="1920" height="1080" alt="htop-monitor" src="https://github.com/user-attachments/assets/53f076e2-ceb7-4840-812b-192712bc18fd" />
+
 
 ### 🚀 Usage
 To connect to the node, I use the following localized command:
 
 ```bash
 ssh -i ~/.ssh/id_rsa_pi jeremy@10.0.0.X -p [CustomPort]
+
+### 🤖 Automation
+I wrote a Python script (`setup_security.py`) to automate the initial hardening process. This script ensures consistent security baselines across new devices by:
+* **System Updates:** Automatically runs `apt-get update/upgrade`.
+* **Tool Installation:** Installs `fail2ban` (Intrusion Prevention) and `ufw` (Firewall).
+* **Firewall Config:** Programmatically opens the SSH port while denying all other incoming traffic.
+
+🧠 Lessons Learned
+Key Management: Learned how to generate keys using ssh-keygen and securely transfer the public key using ssh-copy-id.
+
+Linux Permissions: Understood the importance of chmod 600 for private keys; otherwise, the client refuses to use them (Unprotected Private Key File error).
