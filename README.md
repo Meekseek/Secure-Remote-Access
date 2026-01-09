@@ -25,12 +25,12 @@ To harden the connection against brute-force attacks and unauthorized access, I 
 **1. Security & Hardware Verification**
 *Below: Neofetch confirms the Raspberry Pi 5 hardware, and UFW status confirms the firewall is active and restricting traffic to SSH (Port 22).*
 
-<img width="614" height="550" alt="security-verify" src="[https://github.com/user-attachments/assets/a2326538-0465-4546-8018-4e29d51254a9](https://github.com/user-attachments/assets/a2326538-0465-4546-8018-4e29d51254a9)" />
+<img width="614" height="550" alt="security-verify" src="https://github.com/user-attachments/assets/a2326538-0465-4546-8018-4e29d51254a9" />
 
 **2. System Monitoring**
 *Below: Htop interface showing system resource usage and the active SSH session, verifying the headless configuration.*
 
-<img width="1920" height="1080" alt="htop-monitor" src="[https://github.com/user-attachments/assets/53f076e2-ceb7-4840-812b-192712bc18fd](https://github.com/user-attachments/assets/53f076e2-ceb7-4840-812b-192712bc18fd)" />
+<img width="1920" height="1080" alt="htop-monitor" src="https://github.com/user-attachments/assets/53f076e2-ceb7-4840-812b-192712bc18fd" />
 
 ### 🚀 Usage
 To connect to the node, I use the following localized command:
